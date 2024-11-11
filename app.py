@@ -1,11 +1,7 @@
-import pymysql
-import pymysql.cursors
 from flask import Flask, render_template, url_for, redirect, session, request
 from dotenv import dotenv_values
 import csv
 import random
-import pickle
-import os
 
 config = dotenv_values(".env")
 app = Flask(__name__)
@@ -64,4 +60,4 @@ def research():
         return redirect(url_for('research'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
