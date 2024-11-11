@@ -2,12 +2,15 @@ from flask import Flask, render_template, url_for, redirect, session, request
 from dotenv import dotenv_values
 import csv
 import random
-
-config = dotenv_values(".env")
+import os
 app = Flask(__name__)
 
 # Secret key
-app.secret_key = config['SECRET_KEY']
+try:
+    config = dotenv_values('.env')
+    app.secret_key = config['SECRET_KEY']
+except:
+    app.secret_key = os.environ['SECRET_KEY']
 
 # Read the pid file to get the last assigned pid
 with open('pid.txt', 'r') as f:
