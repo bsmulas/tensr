@@ -1,0 +1,10 @@
+{% extends 'base.jinja' %}
+
+{% block title %} TENSR {% endblock %}
+
+{% block content %}
+<!-- Content block -->
+<h1>Welcome participant {{ session['participant'] }}</h1>
+<a href="{{ url_for('research') }}">Start</a>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div>
+    <h1> Which example builds more tension?</h1>
+</div>
+
+<div>
+    <p>{{ samples[0] }}</p>
+    <form method="post">
+        <input type="number" name="ident" id="ident" value=0 hidden>
+        <button type="submit">Select</button>
+    </form>
+</div>
+
+<div>
+    <p>{{ samples[1] }}</p>
+    <form method="post">
+        <input type="number" name="ident" id="ident" value=1 hidden>
+        <button type="submit">Select</button>
+    </form>
+</div>
+{% endblock %}
